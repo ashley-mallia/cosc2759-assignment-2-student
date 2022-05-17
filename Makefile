@@ -44,9 +44,5 @@ infra-init:
 
 pack:
 	cd src && npm pack
-	if [ -d "ansible/files/" ];	\
-	then mv src/simpletodoapp-1.0.1.tgz ansible/files/simpletodoapp-1.0.1.tgz;\
-	else \
-	mkdir ansible/files/ && \
-	mv src/simpletodoapp-1.0.1.tgz ansible/files/simpletodoapp-1.0.1.tgz; \
-	fi
+	mkdir -p ansible/files
+	mv src/notes-1.0.0.tgz ansible/files
